@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  body { font-family: sans-serif; padding: 16px; line-height: 1.7; font-size: 18px; }
+  h2 { font-size: 20px; }
+  svg { display: block; margin: 16px auto; }
+  .hint { background: #f0f4ff; border-left: 4px solid #4466cc; padding: 10px 14px; margin-top: 16px; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<h2>Задача 21</h2>
+
+<p>
+  Об'єм конуса дорівнює 64 см³. Через середину висоти цього конуса
+  паралельно його основі проведено площину. Утворений переріз є основою
+  меншого конуса, вершина якого збігається з вершиною заданого.
+  Обчисліть об'єм (см³) меншого конуса.
+</p>
+
+<!-- SVG: конус з перетином -->
+<svg viewBox="0 0 220 200" width="100%" style="max-width:280px">
+
+  <!-- Основа великого конуса (еліпс) -->
+  <ellipse cx="110" cy="170" rx="80" ry="18" fill="#ddeeff" stroke="#336699" stroke-width="1.5"/>
+
+  <!-- Бокові сторони великого конуса -->
+  <line x1="110" y1="20" x2="30"  y2="170" stroke="#336699" stroke-width="2"/>
+  <line x1="110" y1="20" x2="190" y2="170" stroke="#336699" stroke-width="2"/>
+
+  <!-- Переріз на середині висоти (еліпс) -->
+  <ellipse cx="110" cy="95" rx="40" ry="9" fill="#fff8cc" stroke="#cc8800" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Висота великого конуса -->
+  <line x1="110" y1="20" x2="110" y2="170" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Позначка середини висоти -->
+  <line x1="104" y1="95" x2="116" y2="95" stroke="#cc8800" stroke-width="1.5"/>
+
+  <!-- Підписи -->
+  <text x="115" y="17"  font-size="13" fill="#333">V</text>
+  <text x="115" y="98"  font-size="12" fill="#cc8800">h/2</text>
+  <text x="115" y="168" font-size="12" fill="#336699">h</text>
+
+  <!-- R і r -->
+  <text x="150" y="168" font-size="13" fill="#336699">R</text>
+  <text x="128" y="91"  font-size="13" fill="#cc8800">r</text>
+
+  <!-- Стрілки радіусів -->
+  <line x1="110" y1="170" x2="188" y2="170" stroke="#336699" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="110" y1="95"  x2="149" y2="95"  stroke="#cc8800" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <defs>
+    <marker id="arr"  markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#336699"/>
+    </marker>
+    <marker id="arr2" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#cc8800"/>
+    </marker>
+  </defs>
+</svg>
+
+<div class="hint">
+  <strong>Підказка.</strong>
+  Менший конус подібний до більшого з коефіцієнтом подібності
+  \( k = \dfrac{1}{2} \), тому об'єми відносяться як куби лінійних розмірів:
+  \[
+    \frac{V_{\text{мал}}}{V_{\text{вел}}} = k^3 = \left(\frac{1}{2}\right)^3 = \frac{1}{8}
+  \]
+  \[
+    V_{\text{мал}} = \frac{64}{8} = \boxed{8 \text{ см}^3}
+  \]
+</div>
+
+</body>
+</html>
